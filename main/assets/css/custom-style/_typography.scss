@@ -3,19 +3,18 @@
 // (START) Global editor code https://codyhouse.co/ds/globals/typography
 
 // --------------------------------
-
 :root {
   // font family
-  --font-primary: system-ui, sans-serif;
+  --font-primary: 'Commissioner', sans-serif;
 
   // font size
-  --text-base-size: 1em; // body font-size
-  --text-scale-ratio: 1.2; // multiplier used to generate the type scale values 👇
-  
+  --text-base-size: 0.9375em; // body font-size
+  --text-scale-ratio: 1.28; // multiplier used to generate the type scale values 👇
+
   // line-height
-  --body-line-height: 1.4;
-  --heading-line-height: 1.2;
-  
+  --body-line-height: 1.7;
+  --heading-line-height: 1.1;
+
   // capital letters - used in combo with the lhCrop mixin
   --font-primary-capital-letter: 1;
 
@@ -38,16 +37,32 @@
 @supports(--css: variables) {
   @include breakpoint(md) {
     :root {
-      --text-base-size: 1.25em;
-      --text-scale-ratio: 1.25;
+      --text-base-size: 0.9375em;
+      --text-scale-ratio: 1.38;
+    }
+  }
+
+  @include breakpoint(lg) {
+    :root {
+      --text-base-size: 1.125em;
+      --text-scale-ratio: 1.45;
     }
   }
 }
 
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base-size);
+  line-height: var(--body-line-height);
+}
+
 h1, h2, h3, h4 {
+  font-family: var(--font-primary);
   font-weight: 700;
 }
 
+// font family
+.font-primary { font-family: var(--font-primary); }
 // --------------------------------
 
 // (END) Global editor code
@@ -55,7 +70,9 @@ h1, h2, h3, h4 {
 // --------------------------------
 
 // link style
-a, .link {}
+a, .link {
+  font-family: var(--font-primary);
+}
 
 mark {
   background-color: alpha(var(--color-accent), 0.2);
@@ -85,4 +102,20 @@ mark {
 .article { // e.g., blog posts
   --body-line-height: 1.58; // set body line-height
   --text-vspace-multiplier: 1.2; // increase vertical spacing
+}
+
+h1, .h1 {
+  font-size: var(--text-xxl);
+  line-height: var(--heading-line-height);
+}
+
+h2, .h2 {
+  font-size: var(--text-xl);
+  line-height: var(--heading-line-height);
+}
+
+h3, .h3 {
+  font-size: 1em;
+  line-height: var(--body-line-height);
+  @include breakpoint(lg) {font-size: 1.11em;}
 }
