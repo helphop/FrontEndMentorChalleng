@@ -59,6 +59,8 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-primary);
   font-weight: 700;
+  color: inherit;
+  line-height: var(--heading-line-height);
 }
 
 // font family
@@ -72,6 +74,7 @@ h1, h2, h3, h4 {
 // link style
 a, .link {
   font-family: var(--font-primary);
+  text-decoration: none;
 }
 
 mark {
@@ -106,16 +109,18 @@ mark {
 
 h1, .h1 {
   font-size: var(--text-xxl);
-  line-height: var(--heading-line-height);
 }
 
 h2, .h2 {
   font-size: var(--text-xl);
-  line-height: var(--heading-line-height);
 }
 
 h3, .h3 {
   font-size: 1em;
   line-height: var(--body-line-height);
   @include breakpoint(lg) {font-size: 1.11em;}
+}
+
+ul li {
+  font-size: 1rem;
 }

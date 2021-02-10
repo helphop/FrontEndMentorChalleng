@@ -1,0 +1,16 @@
+body > * {
+  max-width: var(--max-width-xl);
+}
+
+.header {
+  .nav {
+    &__list {
+      li {
+        display: inline-block;
+      }
+      li a {
+        display: inline-block;
+      }
+    }
+  }
+}
