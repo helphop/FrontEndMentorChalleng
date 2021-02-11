@@ -21,10 +21,11 @@
   --space-xxxl: calc(8.5 * var(--space-unit));
   --space-xxxxl: calc(13.75 * var(--space-unit));
   --component-padding: var(--space-md);
+  --section-padding: var(--space-xl);
 }
 
 @supports(--css: variables) {
-  @include breakpoint(md) {
+  @include breakpoint(sm) {
     :root, * {
       --component-padding: var(--space-xl);
     }

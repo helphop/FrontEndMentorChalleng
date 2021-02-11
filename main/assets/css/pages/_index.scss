@@ -9,6 +9,7 @@ body > * {
   > * {
     flex: 100%;
     padding: var(--space-lg) 0;
+    @include breakpoint(sm) { padding: var(--section-padding) 0 ;}
   }
 
   .container {
@@ -16,11 +17,9 @@ body > * {
     align-items: center;
     justify-content: space-between;
   }
-  &__nav.open {
-    transform: translateX(0%);
-  }
 
   &__nav {
+    &.open { transform: translateX(0%);}
     transform: translateX(200%);
     position: fixed;
     right: var(--component-padding);
@@ -28,6 +27,7 @@ body > * {
     min-width: 15.75rem;
     transition: all 0.4s ease;
     @include breakpoint(sm) {
+      transform: translateX(0%);
       display: block;
       position: static;
       background-color: var(--color-primary);
@@ -38,6 +38,7 @@ body > * {
         --bg-button: var(--color-accent);
         &:hover { --bg-button: var(--color-accent-lighter)}
       }
+
     }
     &__list {
       display: grid;
@@ -49,5 +50,29 @@ body > * {
        justify-content: start;
       }
     }
+  }
+}
+
+.hero {
+    &__img {
+      width: 100%;
+      object-fit: contain;
+    }
+  .container {
+    padding: var(--section-padding) 0;
+  }
+  @include breakpoint(sm) {
+    background: url(../images/tablet/image-hero.jpg) no-repeat;
+    background-size: fill;
+    background-position: right center;
+    &__img {
+      display: none;
+    }
+    &__content {
+      max-width: 55%;
+    }
+  }
+  @include breakpoint(xl) {
+    background: url(../images/tablet/image-hero.jpg) no-repeat;
   }
 }

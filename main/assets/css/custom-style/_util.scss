@@ -21,3 +21,27 @@
 .bg-accent {
   color: var(--color-white);
 }
+
+.flow-content > * + * {
+  margin-top: var(--space-unit);
+}
+
+.flow-content-xsmall > * + * {
+  margin-top: var(--space-xs);
+}
+
+.flow-content-sm > * + * {
+  margin-top: var(--space-sm);
+}
+
+.flow-content-md > * + * {
+    margin-top: var(--space-md);
+}
+
+.flow-content-lg> * + * {
+  margin-top: var(--space-lg);
+}
+
+.flow-content-xl > * + * {
+  margin-top: var(--space-xl);
+}
