@@ -3,15 +3,23 @@ body > * {
 }
 
 .header {
-  background: linear-gradient(to right, var(--color-white) 50%, var(--color-primary) 50%);
   color: var(--color-white);
-  .container {
-   display: grid;
-    grid-template-columns: minmax(330px, 1fr) minmax(468px, 1fr);
-    align-items: center;
+  display: flex;
+  align-items: center;
+  > * {
+    flex-grow: 1;
+    padding: var(--space-lg) 0;
   }
 
-  .nav {
+  .container {
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    background-color: var(--color-primary);
+    min-width: 438px;
     &__list {
       display: grid;
       grid-auto-flow: column;
