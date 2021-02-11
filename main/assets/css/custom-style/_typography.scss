@@ -75,6 +75,7 @@ h1, h2, h3, h4 {
 a, .link {
   font-family: var(--font-primary);
   text-decoration: none;
+  color: var(--fg, inherit);
 }
 
 mark {
