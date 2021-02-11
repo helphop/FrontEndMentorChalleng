@@ -9,7 +9,9 @@ body > * {
   > * {
     flex: 100%;
     padding: var(--space-lg) 0;
-    @include breakpoint(sm) { padding: var(--section-padding) 0 ;}
+    @include breakpoint(sm) {
+      padding: var(--section-padding) 0 ;
+    }
   }
 
   .container {
