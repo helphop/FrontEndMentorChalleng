@@ -10,23 +10,44 @@ body > * {
     flex: 100%;
     padding: var(--space-lg) 0;
   }
+
   .container {
      display: flex;
     align-items: center;
     justify-content: space-between;
   }
+  &__nav.open {
+    transform: translateX(0%);
+  }
 
   &__nav {
-    background-color: var(--color-primary);
-    min-width: 438px;
-    padding-right: var(--component-padding);
-    padding-left: var(--space-md);
+    transform: translateX(200%);
+    position: fixed;
+    right: var(--component-padding);
+    top: calc( 3 * var(--space-lg));
+    min-width: 15.75rem;
+    transition: all 0.4s ease;
+    @include breakpoint(sm) {
+      display: block;
+      position: static;
+      background-color: var(--color-primary);
+      min-width: 27.375rem;
+      padding-right: var(--component-padding);
+      padding-left: var(--space-md);
+      .btn {
+        --bg-button: var(--color-accent);
+        &:hover { --bg-button: var(--color-accent-lighter)}
+      }
+    }
     &__list {
       display: grid;
-      grid-auto-flow: column;
-      justify-content: start;
-      gap: var(--space-md);
-      align-items: center;
+       gap: var(--space-md);
+      place-items: center;
+      @include breakpoint(sm) {
+        position: static;
+         grid-auto-flow: column;
+       justify-content: start;
+      }
     }
   }
 }
