@@ -14,16 +14,17 @@
       <div class="header__logo">
         <div class="container">
           <img src="assets/images/desktop/logo.svg" alt="Creative Logo">
-          <img src="assets/images/mobile/icon-hamburger.svg" alt="menu icon">
+          <img src="assets/images/mobile/icon-hamburger.svg" class="cursor-pointer" id="hamburger" alt="menu open icon">
+          <img src="assets/images/mobile/icon-cross.svg" class="cursor-pointer is-hidden" id="cross" alt="menu close icon">
         </div>
       </div>
 
-      <nav class="header__nav">
+      <nav class="header__nav bg-accent">
         <ul class="header__nav__list">
           <li><a href="about.html">About</a></li>
           <li><a href="service.html">Service</a></li>
           <li><a href="Projects.html">Projects</a></li>
-          <li><a class="btn btn--accent" href="about.html">Schedule a Call</a></li>
+          <li><a class="btn btn--primary" href="about.html">Schedule a Call</a></li>
         </ul>
       </nav>
 
@@ -103,5 +104,6 @@
     </div>
   </footer>
 <script src="assets/js/scripts.js"></script>
+<script src="assets/js/toggleMenu.js"></script>
 </body>
 </html>
