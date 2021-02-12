@@ -103,7 +103,7 @@ body > * {
     content: '';
     top: -3.125rem;
     left: calc(-1 * var(--mg-left));
-    font-size: var(--text-xxxxl);
+    font-size: 4rem;
     font-weight: 700;
     opacity: 25%;
   }
@@ -113,13 +113,13 @@ body > * {
     grid-template-columns: repeat(50, 2%);
     grid-auto-rows: repeat(50, 1fr);
 
-
     &__picture {
       background: url(../images/tablet/image-strategic.jpg) no-repeat;
       background-size: cover;
       grid-column: 1 / 25;
       grid-row: 1 / span 26;
       z-index: 5;
+      min-height: 378px;
       img { display: none;}
     }
 
@@ -142,6 +142,10 @@ body > * {
     }
   }
 
+  @include breakpoint(lg) {
+      background: url(../images/desktop/image-strategic.jpg) no-repeat;
+      background-size: cover;
+  }
 
 
 }
