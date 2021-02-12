@@ -18,9 +18,13 @@
 //   }
 // }
 
-.bg-accent {
+
+
+.bg-accent,
+.bg-primary {
   color: var(--color-white);
 }
+
 
 .flow-content > * + * {
   margin-top: var(--space-unit);

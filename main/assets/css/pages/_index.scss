@@ -24,7 +24,10 @@ body > * {
     top: calc( 3 * var(--space-lg));
     min-width: 15.75rem;
     transition: all 0.4s ease;
-     &.open { transform: translateX(0%);}
+     &.open {
+       transform: translateX(0%);
+        z-index: var(--zindex-fixed-element);
+      }
     @include breakpoint(sm) {
       transform: translateX(0%);
       display: block;
@@ -63,7 +66,6 @@ body > * {
       width: 100%;
       object-fit: cover;
     }
-
   @include breakpoint(sm) {
     background: right center/ contain no-repeat  url(../images/tablet/image-hero.jpg);
     &__img {display: none;}
@@ -73,4 +75,42 @@ body > * {
     background: right center/ contain no-repeat url(../images/desktop/image-hero.jpg);
     &__content {max-width: 50%;}
   }
+}
+
+.strategic {
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .services-title {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-xxl) 0 var(--space-xl);
+  }
+
+  &__services {
+    padding-bottom: var(--space-xxl);
+  }
+
+  .service {
+    --mg-left: 14px;
+    margin-left: var(--mg-left);
+    position: relative;
+    h3 {
+      margin-bottom: var(--space-sm);
+    }
+  }
+
+  .bg-number {
+    position: absolute;
+    content: '';
+    top: -3.125rem;
+    left: calc(-1 * var(--mg-left));
+    font-size: var(--text-xxxxl);
+    font-weight: 700;
+    opacity: 25%;
+  }
+
 }
