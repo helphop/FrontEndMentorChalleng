@@ -35,7 +35,7 @@
 }
 
 @supports(--css: variables) {
-  @include breakpoint(md) {
+  @include breakpoint(sm) {
     :root {
       --text-base-size: 0.9375em;
       --text-scale-ratio: 1.38;

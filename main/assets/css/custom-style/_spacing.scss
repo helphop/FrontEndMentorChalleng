@@ -24,7 +24,7 @@
 }
 
 @supports(--css: variables) {
-  @include breakpoint(md) {
+  @include breakpoint(sm) {
     :root, * {
       --component-padding: var(--space-xl);
     }

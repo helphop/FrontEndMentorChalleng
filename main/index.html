@@ -6,6 +6,8 @@
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <link id="codyframe" rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;800&display=swap" rel="stylesheet">
   <title>Creative</title>
 </head>
 <body>
@@ -14,13 +16,12 @@
       <div class="header__logo">
         <div class="container">
           <img src="assets/images/desktop/logo.svg" alt="Creative Logo">
-          <div class="menu-icons">
-            <img src="assets/images/mobile/icon-hamburger.svg" class="cursor-pointer | menu__icon" id="hamburger" alt="menu open icon">
-            <img src="assets/images/mobile/icon-cross.svg" class="cursor-pointer is-hidden  | menu__icon" id="cross" alt="menu close icon">
+          <div class="menu-icons hide@sm">
+            <img src="assets/images/mobile/icon-hamburger.svg" class="cursor-pointer | menu-icon" id="hamburger" alt="menu open icon">
+            <img src="assets/images/mobile/icon-cross.svg" class="cursor-pointer is-hidden  | menu-icon" id="cross" alt="menu close icon">
           </div>
         </div>
       </div>
-
       <nav class="header__nav bg-accent">
         <ul class="header__nav__list">
           <li><a href="about.html">About</a></li>
@@ -29,15 +30,19 @@
           <li><a class="btn btn--primary" href="about.html">Schedule a Call</a></li>
         </ul>
       </nav>
-
-
   </header>
-  <div class="hero">
-    <h1>Branding & website design agency</h1>
-    <p>We specialize in visual storytelling by creating cohesive brand and website design
-    solutions for small businesses, giving lasting impressions to audiences in a digital world.</p>
-    <a class="btn btn--primary"  href="learn_more.html">Learn more</a>
-  </div>
+  <section class="hero">
+    <img src="assets/images/mobile/image-hero.jpg" class="block hero__img" alt="">
+    <div class="container padding-y-xxl">
+      <div class="hero__content flow-content-lg">
+        <h1>Branding & website design agency</h1>
+        <p>We specialize in visual storytelling by creating cohesive brand and website design
+        solutions for small businesses, giving lasting impressions to audiences in a digital world.</p>
+        <a class="btn btn--primary"  href="learn_more.html">Learn more</a>
+      </div>
+    </div>
+  </section>
+
   <main>
     <section class="strategic">
       <picture>
