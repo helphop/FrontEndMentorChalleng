@@ -79,6 +79,29 @@ body > * {
 
 .strategic {
 
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-columns: repeat(50, 2%);
+    grid-auto-rows: repeat(50, 1fr);
+
+
+    &__picture {
+      grid-column: 1 / 25;
+      grid-row: span 1 / 15;
+    }
+
+    &__design {
+      grid-column: 25 / 51;
+      grid-row: 1 / span 20;
+      align-self: start;
+    }
+
+    &__services {
+      grid-column: 23 / 51;
+      grid-row: 15 ;
+    }
+  }
+
   &__img {
     width: 100%;
     object-fit: cover;
