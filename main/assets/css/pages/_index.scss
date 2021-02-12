@@ -79,29 +79,6 @@ body > * {
 
 .strategic {
 
-  @include breakpoint(sm) {
-    display: grid;
-    grid-template-columns: repeat(50, 2%);
-    grid-auto-rows: repeat(50, 1fr);
-
-
-    &__picture {
-      grid-column: 1 / 25;
-      grid-row: span 1 / 15;
-    }
-
-    &__design {
-      grid-column: 25 / 51;
-      grid-row: 1 / span 20;
-      align-self: start;
-    }
-
-    &__services {
-      grid-column: 23 / 51;
-      grid-row: 15 ;
-    }
-  }
-
   &__img {
     width: 100%;
     object-fit: cover;
@@ -110,15 +87,10 @@ body > * {
   .services-title {
     background-color: var(--color-primary);
     color: var(--color-white);
-    padding: var(--space-xxl) 0 var(--space-xl);
-  }
-
-  &__services {
-    padding-bottom: var(--space-xxl);
   }
 
   .service {
-    --mg-left: 14px;
+    --mg-left: 20px;
     margin-left: var(--mg-left);
     position: relative;
     h3 {
@@ -135,5 +107,41 @@ body > * {
     font-weight: 700;
     opacity: 25%;
   }
+
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-columns: repeat(50, 2%);
+    grid-auto-rows: repeat(50, 1fr);
+
+
+    &__picture {
+      background: url(../images/tablet/image-strategic.jpg) no-repeat;
+      background-size: cover;
+      grid-column: 1 / 25;
+      grid-row: 1 / span 26;
+      z-index: 5;
+      img { display: none;}
+    }
+
+    &__design {
+      grid-column: 25 / 51;
+      grid-row: 1 / 15;
+    }
+
+    &__services {
+      grid-column: 23 / 51;
+      grid-row: 19 / 50;
+      z-index: 6;
+    }
+
+    .services-title {
+      background: var(--color-white);
+      color: var(--color-accent);
+      grid-column: 1 / 24;
+      grid-row: 27 / 50;
+    }
+  }
+
+
 
 }
