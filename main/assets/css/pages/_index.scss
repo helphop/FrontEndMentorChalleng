@@ -65,14 +65,12 @@ body > * {
     }
 
   @include breakpoint(sm) {
-    background: url(../images/tablet/image-hero.jpg) no-repeat right center;
-    background-size: contain;
+    background: right center/ contain no-repeat  url(../images/tablet/image-hero.jpg);
     &__img {display: none;}
     &__content {max-width: 398px;}
   }
   @include breakpoint(lg) {
-    background: url(../images/desktop/image-hero.jpg) no-repeat right center;
-    background-size: contain;
+    background: right center/ contain no-repeat url(../images/desktop/image-hero.jpg);
     &__content {max-width: 50%;}
   }
 }
