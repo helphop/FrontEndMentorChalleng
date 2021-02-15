@@ -78,13 +78,13 @@ body > * {
 }
 
 .strategic {
-
+  height: 100vh;
   &__img {
     width: 100%;
     object-fit: cover;
   }
 
-  &__services__intro {
+  &__services-intro {
     background-color: var(--color-primary);
     color: var(--color-white);
   }
@@ -111,41 +111,48 @@ body > * {
   @include breakpoint(sm) {
     display: grid;
     grid-template-columns: repeat(32,1fr);
-    grid-template-rows: repeat(11, 120px);
+    grid-template-rows: repeat(22, minmax(60px, 1fr));
 
 
     &__picture {
       background: url(../images/tablet/image-strategic.jpg) no-repeat;
       background-size: cover;
-      // background: red;
       grid-column: 1 / span 15;
-      grid-row: 1 / span 5;
-      z-index: 5;
+      grid-row: 1 / span 11;
       img { display: none;}
     }
 
     &__design {
       grid-column: 16 / span 17;
-      grid-row: 1 / span 4;
+      grid-row: 1 / span 9;
+      display: grid;
+      place-items: center;
     }
 
-  //   &__services__details {
-  //     // grid-column: 23 / 51;
-  //     // grid-row: 19 / 50;
-  //     z-index: 6;
-  //   }
+    &__services-intro {
+      background: transparent;
+      color: var(--color-accent);
+      grid-column: 1 / span 15;
+      grid-row: 14 / span 8;
+  }
 
-  //   &__services__intro {
-  //     background: var(--color-white);
-  //     color: var(--color-accent);
-  //     grid-column: 1 / 24;
-  //     grid-row: 27 / 50;
-  //   }
+    &__services-details {
+      grid-column: 15 / span 19;
+      grid-row: 10 / -1;
+      display: grid;
+      align-items: center;
+
+    }
+
+
    }
 
   @include breakpoint(lg) {
+    &__picture {
       background: url(../images/desktop/image-strategic.jpg) no-repeat;
       background-size: cover;
+    }
+
   }
 
 
