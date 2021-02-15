@@ -84,7 +84,7 @@ body > * {
     object-fit: cover;
   }
 
-  .services-title {
+  &__services__intro {
     background-color: var(--color-primary);
     color: var(--color-white);
   }
@@ -110,37 +110,38 @@ body > * {
 
   @include breakpoint(sm) {
     display: grid;
-    grid-template-columns: repeat(50, 2%);
-    grid-auto-rows: repeat(50, 1fr);
+    grid-template-columns: repeat(32,1fr);
+    grid-template-rows: repeat(11, 120px);
+
 
     &__picture {
       background: url(../images/tablet/image-strategic.jpg) no-repeat;
       background-size: cover;
-      grid-column: 1 / 25;
-      grid-row: 1 / span 26;
+      // background: red;
+      grid-column: 1 / span 15;
+      grid-row: 1 / span 5;
       z-index: 5;
-      min-height: 378px;
       img { display: none;}
     }
 
     &__design {
-      grid-column: 25 / 51;
-      grid-row: 1 / 15;
+      grid-column: 16 / span 17;
+      grid-row: 1 / span 4;
     }
 
-    &__services {
-      grid-column: 23 / 51;
-      grid-row: 19 / 50;
-      z-index: 6;
-    }
+  //   &__services__details {
+  //     // grid-column: 23 / 51;
+  //     // grid-row: 19 / 50;
+  //     z-index: 6;
+  //   }
 
-    .services-title {
-      background: var(--color-white);
-      color: var(--color-accent);
-      grid-column: 1 / 24;
-      grid-row: 27 / 50;
-    }
-  }
+  //   &__services__intro {
+  //     background: var(--color-white);
+  //     color: var(--color-accent);
+  //     grid-column: 1 / 24;
+  //     grid-row: 27 / 50;
+  //   }
+   }
 
   @include breakpoint(lg) {
       background: url(../images/desktop/image-strategic.jpg) no-repeat;
