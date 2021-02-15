@@ -78,7 +78,7 @@ body > * {
 }
 
 .strategic {
-  height: 100vh;
+
   &__img {
     width: 100%;
     object-fit: cover;
@@ -109,6 +109,7 @@ body > * {
   }
 
   @include breakpoint(sm) {
+      height: 100vh;
     display: grid;
     grid-template-columns: repeat(32,1fr);
     grid-template-rows: repeat(22, minmax(60px, 1fr));
@@ -141,16 +142,27 @@ body > * {
       grid-row: 10 / -1;
       display: grid;
       align-items: center;
-
     }
-
-
    }
 
   @include breakpoint(lg) {
     &__picture {
       background: url(../images/desktop/image-strategic.jpg) no-repeat;
       background-size: cover;
+    }
+
+    &__services-intro {
+      grid-column: 1 / span 18;
+      z-index: 10;
+    }
+
+    &__services-details {
+       grid-column: 12 / -1;
+    }
+
+    &__wrapper {
+      max-width: 780px;
+      margin-left: auto;
     }
 
   }
