@@ -109,7 +109,7 @@ body > * {
   }
 
   @include breakpoint(sm) {
-      height: 100vh;
+    min-height: 85vh;
     display: grid;
     grid-template-columns: repeat(32,1fr);
     grid-template-rows: repeat(22, minmax(60px, 1fr));
@@ -124,7 +124,7 @@ body > * {
     }
 
     &__design {
-      grid-column: 16 / span 17;
+      grid-column: 16 / -1;
       grid-row: 1 / span 9;
       display: grid;
       place-items: center;
@@ -134,10 +134,11 @@ body > * {
       background: transparent;
       color: var(--color-accent);
       grid-column: 1 / span 15;
-      grid-row: 14 / span 8;
+      grid-row: 13 / span 8;
   }
 
     &__services-details {
+      padding-bottom: 0;
       grid-column: 15 / span 19;
       grid-row: 10 / -1;
       display: grid;
@@ -146,9 +147,18 @@ body > * {
    }
 
   @include breakpoint(lg) {
+    min-height: 120vh;
     &__picture {
       background: url(../images/desktop/image-strategic.jpg) no-repeat;
       background-size: cover;
+    }
+
+    &__picture {
+      grid-column: 1 / span 16;
+    }
+
+    &__design {
+       grid-column: 17 / -1;
     }
 
     &__services-intro {
@@ -160,12 +170,8 @@ body > * {
        grid-column: 12 / -1;
     }
 
-    &__wrapper {
-      max-width: 780px;
-      margin-left: auto;
+    &__services-details .container{
+      padding-left: calc((100vw/32) * 5 - 20px);
     }
-
   }
-
-
 }
