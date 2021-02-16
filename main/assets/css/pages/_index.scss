@@ -84,6 +84,21 @@ body > * {
     object-fit: cover;
   }
 
+&__design {
+  position: relative;
+  display: grid;
+  align-content: center;
+}
+
+.red-wave-icon {
+  content: '';
+  position: absolute;
+  transform: translateY(-50%);
+  top: 0;
+  left: var(--component-padding);
+  width: 3.93rem;
+}
+
   &__services-intro {
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -127,6 +142,13 @@ body > * {
       grid-row: 1 / span 9;
       display: grid;
       place-items: center;
+      h2 { max-width: 9ch;}
+    }
+
+    .red-wave-icon {
+      transform: translateX(-50%);
+      top: 32%;
+      left: 0%;
     }
 
     &__services-intro {
@@ -150,11 +172,14 @@ body > * {
     --picture-span: 16;
     --details-span: 20;
     --overlap: calc(var(--details-span) - var(--picture-span));
+
     &__picture {
       background: url(../images/desktop/image-strategic.jpg) no-repeat;
       background-size: cover;
       grid-column: 1 / span var(--picture-span);
     }
+
+    .red-wave-icon {width: 8.43rem;}
 
     &__design {
        grid-column: 17 / -1;
