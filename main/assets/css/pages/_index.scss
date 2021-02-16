@@ -84,7 +84,7 @@ body > * {
     object-fit: cover;
   }
 
-  .services-title {
+  &__services-intro {
     background-color: var(--color-primary);
     color: var(--color-white);
   }
@@ -109,43 +109,69 @@ body > * {
   }
 
   @include breakpoint(sm) {
+    min-height: 85vh;
     display: grid;
-    grid-template-columns: repeat(50, 2%);
-    grid-auto-rows: repeat(50, 1fr);
+    grid-template-columns: repeat(32,1fr);
+    grid-template-rows: repeat(22, minmax(60px, 1fr));
+
 
     &__picture {
       background: url(../images/tablet/image-strategic.jpg) no-repeat;
       background-size: cover;
-      grid-column: 1 / 25;
-      grid-row: 1 / span 26;
-      z-index: 5;
-      min-height: 378px;
+      grid-column: 1 / span 15;
+      grid-row: 1 / span 11;
       img { display: none;}
     }
 
     &__design {
-      grid-column: 25 / 51;
-      grid-row: 1 / 15;
+      grid-column: 16 / -1;
+      grid-row: 1 / span 9;
+      display: grid;
+      place-items: center;
     }
 
-    &__services {
-      grid-column: 23 / 51;
-      grid-row: 19 / 50;
-      z-index: 6;
-    }
-
-    .services-title {
-      background: var(--color-white);
+    &__services-intro {
+      background: transparent;
       color: var(--color-accent);
-      grid-column: 1 / 24;
-      grid-row: 27 / 50;
-    }
+      grid-column: 1 / span 15;
+      grid-row: 13 / span 8;
   }
+
+    &__services-details {
+      padding-bottom: 0;
+      grid-column: 15 / span 19;
+      grid-row: 10 / -1;
+      display: grid;
+      align-items: center;
+    }
+   }
 
   @include breakpoint(lg) {
+    min-height: 120vh;
+    &__picture {
       background: url(../images/desktop/image-strategic.jpg) no-repeat;
       background-size: cover;
+    }
+
+    &__picture {
+      grid-column: 1 / span 16;
+    }
+
+    &__design {
+       grid-column: 17 / -1;
+    }
+
+    &__services-intro {
+      grid-column: 1 / span 18;
+      z-index: 10;
+    }
+
+    &__services-details {
+       grid-column: 12 / -1;
+    }
+
+    &__services-details .container{
+      padding-left: calc((100vw/32) * 5 - 20px);
+    }
   }
-
-
 }
