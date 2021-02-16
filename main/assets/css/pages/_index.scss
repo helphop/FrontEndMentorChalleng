@@ -78,7 +78,7 @@ body > * {
 }
 
 .strategic {
-
+  --mg-left: 20px;
   &__img {
     width: 100%;
     object-fit: cover;
@@ -90,7 +90,6 @@ body > * {
   }
 
   .service {
-    --mg-left: 20px;
     margin-left: var(--mg-left);
     position: relative;
     h3 {
@@ -139,7 +138,7 @@ body > * {
 
     &__services-details {
       padding-bottom: 0;
-      grid-column: 15 / span 19;
+      grid-column: 15 / -1;
       grid-row: 10 / -1;
       display: grid;
       align-items: center;
@@ -148,13 +147,13 @@ body > * {
 
   @include breakpoint(lg) {
     min-height: 120vh;
+    --picture-span: 16;
+    --details-span: 20;
+    --overlap: calc(var(--details-span) - var(--picture-span));
     &__picture {
       background: url(../images/desktop/image-strategic.jpg) no-repeat;
       background-size: cover;
-    }
-
-    &__picture {
-      grid-column: 1 / span 16;
+      grid-column: 1 / span var(--picture-span);
     }
 
     &__design {
@@ -167,11 +166,65 @@ body > * {
     }
 
     &__services-details {
-       grid-column: 12 / -1;
+       grid-column: 13 / span var(--details-span);
     }
 
-    &__services-details .container{
-      padding-left: calc((100vw/32) * 5 - 20px);
+    &__services-details .container {
+      padding-left: calc((100vw/32) * var(--overlap) - var(--mg-left));
+    }
+  }
+}
+
+.slides {
+  display: grid;
+   grid-auto-flow: column;
+   overflow-x: hidden;
+   scroll-snap-type: x mandatory;
+   scroll-behavior: smooth;
+
+  .slide {
+    width: 100vw;
+    max-width: 90rem;
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    &__image {
+      grid-column: 15 / -1;
+      grid-row: 1 / -1;
+      --bg-gradient: linear-gradient(to bottom, transparent 70%, var(--color-black) 100%);
+      background-image: var(--bg-gradient), var(--bg-image);
+      background-size: cover;
+    }
+
+    &__image--1 {--bg-image: url(../images/tablet/image-slide-1.jpg);}
+    &__image--2 {--bg-image: url(../images/tablet/image-slide-2.jpg);}
+    &__image--3 {--bg-image: url(../images/tablet/image-slide-3.jpg);}
+
+    &__info {
+      text-align: right;
+      align-self: center;
+      color: var(--color-white);
+      grid-column: 20 / -1;
+      grid-row: 4 / 5;
+      padding: var(--space-xl) 0;
+    }
+
+    &__intro {
+      padding: var(--space-xxl) 0;
+      grid-column: 1 / 17;
+      grid-row: 1 / 4;
+      display: grid;align-items: center;
+      h2 {max-width: 12ch;}
+    }
+
+    &__nav > :last-child {margin-left: var(--space-sm);}
+
+    @include breakpoint(lg) {
+      &__image { grid-column: 13 / -1}
+      &__image--1 {--bg-image: url(../images/desktop/image-slide-1.jpg);}
+      &__image--2 {--bg-image: url(../images/desktop/image-slide-2.jpg); }
+      &__image--3 {--bg-image: url(../images/desktop/image-slide-3.jpg);}
     }
   }
 }
