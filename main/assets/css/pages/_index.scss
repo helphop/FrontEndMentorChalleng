@@ -278,3 +278,36 @@ body > * {
     }
   }
 }
+
+.footer {
+  padding: var(--space-xl) 0;
+  position: relative;
+  &__logo {
+    display: none;
+  }
+
+  .container {
+     display: grid;
+     align-items: center;
+     justify-items: start;
+     gap: var(--space-xl);
+  }
+
+  @include breakpoint(sm) {
+    .container {
+     grid-auto-flow: column;
+    justify-content: space-between;
+    h2 { width: 18ch;}
+    }
+  }
+
+  @include breakpoint(lg) {
+    &__logo {
+      display: block;
+      position: absolute;
+      content: '';
+      left: 0;
+      transform: translate(-50%, 50%);
+    }
+  }
+}
