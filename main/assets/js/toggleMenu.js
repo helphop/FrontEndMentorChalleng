@@ -6,3 +6,4 @@ const toggleClasses = () => {
   document.getElementById("hamburger").classList.toggle("is-hidden");
   document.getElementById("cross").classList.toggle("is-hidden");
 }
+

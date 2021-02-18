@@ -206,8 +206,11 @@ body > * {
    overflow-x: auto;
    scroll-snap-type: x mandatory;
    scroll-behavior: smooth;
+   overflow-y: hidden;
+
 
   .slide {
+    //  scroll-margin-top: 300px;
     width: 100vw;
     max-width: 90rem;
     display: grid;
