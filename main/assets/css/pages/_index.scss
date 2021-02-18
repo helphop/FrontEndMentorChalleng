@@ -206,8 +206,11 @@ body > * {
    overflow-x: auto;
    scroll-snap-type: x mandatory;
    scroll-behavior: smooth;
+   overflow-y: hidden;
+
 
   .slide {
+    //  scroll-margin-top: 300px;
     width: 100vw;
     max-width: 90rem;
     display: grid;
@@ -247,7 +250,6 @@ body > * {
     &__nav > :last-child {margin-left: var(--space-sm);}
 
     @include breakpoint(sm) {
-
       &__image {
         grid-column: 15 / -1;
         grid-row: 1 / -1;
@@ -267,10 +269,20 @@ body > * {
         padding: var(--space-xxl) 0;
         grid-column: 1 / 17;
         grid-row: 1 / 4;
+        position: relative;
+        .wave-icon {
+          position: absolute;
+          content: '';
+          width: 62.5px;
+          right: 0;
+          top: 35%;
+          transform: translate(50%, 50%);
+        }
       }
     }
 
     @include breakpoint(lg) {
+      &__intro .wave-icon { width: auto;}
       &__image { grid-column: 13 / -1}
       &__image--1 {--bg-image: url(../images/desktop/image-slide-1.jpg);}
       &__image--2 {--bg-image: url(../images/desktop/image-slide-2.jpg); }
