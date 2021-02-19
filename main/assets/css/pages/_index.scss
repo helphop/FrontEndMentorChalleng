@@ -197,14 +197,14 @@ body > * {
     }
 
     &__services-details .container {
-      padding-left: calc(MIN(100vw, 90rem)/32 * var(--overlap) - var(--mg-left));
+      padding-left: calc(MIN(100vw, var(--max-width-xl))/32 * var(--overlap) - var(--mg-left));
     }
   }
 }
 
 .slider {
   .slide {
-    max-width: 90rem;
+    max-width: var(--max-width-xl);
     display: grid;
     grid-template-columns: repeat(32, 1fr);
     grid-template-rows: repeat(4, 1fr);
