@@ -24,10 +24,15 @@ body > * {
       }
     @include breakpoint(sm) {
       transform: translateX(0%);
-      display: block;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: var(--space-lg);
       position: static;
       background-color: var(--color-primary);
       min-width: 27.375rem;
+    }
+    @include breakpoint(lg) {
+      padding-left: var(--space-xl);
     }
 
     &__list {
@@ -35,23 +40,19 @@ body > * {
       gap: var(--space-md);
       place-items: center;
       @include breakpoint(sm) {
-        padding-right: var(--component-padding);
-        padding-left: var(--space-md);
-        position: static;
          grid-auto-flow: column;
-        justify-content: start;
         .btn {
-          padding-left: var(--space-md); padding-right: var(--space-md);
+          width: 80%;
           --bg-button: var(--color-accent);
           &:hover { --bg-button: var(--color-accent-lighter)}
         }
       }
-      @include breakpoint(md) {
-        padding-left: var(--space-xl);
+      @include breakpoint(lg) {
         gap: var(--space-lg);
-        .btn{padding-left: var(--btn-padding-x); padding-right: var(--btn-padding-x);}
+        .btn {width: initial;}
       }
     }
+
   }
 }
 
