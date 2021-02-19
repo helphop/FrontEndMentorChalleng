@@ -155,7 +155,7 @@ body > * {
    }
 
   @include breakpoint(lg) {
-    min-height: 150vh;
+    min-height: 100vh;
     --picture-span: 16;
     --details-span: 20;
     --details-start-column: 13;
