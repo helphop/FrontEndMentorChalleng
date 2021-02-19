@@ -79,7 +79,7 @@ body > * {
 }
 
 .strategic {
-  --mg-left: 20px;
+  --mg-left: 1.25rem;
   &__img {
     width: 100%;
     object-fit: cover;
@@ -196,7 +196,7 @@ body > * {
     }
 
     &__services-details .container {
-      padding-left: calc((100vw/32) * var(--overlap) - var(--mg-left));
+      padding-left: calc(MIN(100vw, 90rem)/32 * var(--overlap) - var(--mg-left));
     }
   }
 }
