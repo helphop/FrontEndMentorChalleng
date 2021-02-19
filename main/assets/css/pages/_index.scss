@@ -200,19 +200,18 @@ body > * {
       background-size: cover;
       grid-column: 1 / -1;
       grid-row: 1 / span 3;
+      display: grid;
+      place-items: end;
     }
 
     &__info {
+      width: 100%;
       text-align: right;
-      align-self: end;
-     color: var(--color-white);
-     padding: var(--space-sm) 0;
-      grid-column: 15 / -1;
-      grid-row: 3 ;
+      color: var(--color-white);
+      padding: var(--space-sm) 0;
     }
-    .wave-icon {
-      display: none;
-    }
+
+    .wave-icon {display: none;}
 
     &__intro {
     padding: var(--space-xl) 0;
