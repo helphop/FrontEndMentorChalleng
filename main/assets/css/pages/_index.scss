@@ -80,7 +80,7 @@ body > * {
   }
 
 &__design {
-  position: relative;
+  position: relative; //to place wave icon
   display: grid;
   align-content: center;
 }
@@ -94,17 +94,10 @@ body > * {
   width: 3.93rem;
 }
 
-  &__services-intro {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-  }
-
   .service {
     margin-left: var(--mg-left);
     position: relative;
-    h3 {
-      margin-bottom: var(--space-sm);
-    }
+    h3 {margin-bottom: var(--space-sm);}
   }
 
   .bg-number {
@@ -122,7 +115,6 @@ body > * {
     display: grid;
     grid-template-columns: repeat(32,1fr);
     grid-template-rows: repeat(22, minmax(60px, 1fr));
-
 
     &__picture {
       background: url(../images/tablet/image-strategic.jpg) no-repeat;
