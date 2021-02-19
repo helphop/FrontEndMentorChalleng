@@ -4,25 +4,18 @@ body > * {
 }
 
 .header {
-  color: var(--color-white);
   display: flex;
   align-items: center;
   > * {
-    flex: 100%;
+    flex: 1;
     padding: var(--space-xl) 0;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   &__nav {
     transform: translateX(200%);
     position: fixed;
     right: var(--component-padding);
-    top: calc( 3 * var(--space-lg));
+    top: calc(2 * var(--space-xl) + 1.875rem); // 2 * padding of header items plus logo height
     min-width: 15.75rem;
     transition: all 0.4s ease;
      &.open {
@@ -31,33 +24,33 @@ body > * {
       }
     @include breakpoint(sm) {
       transform: translateX(0%);
-      display: block;
+      padding-left: var(--space-lg);
       position: static;
       background-color: var(--color-primary);
       min-width: 27.375rem;
     }
+    @include breakpoint(lg) {
+      padding-left: var(--space-xl);
+    }
+
     &__list {
      display: grid;
       gap: var(--space-md);
       place-items: center;
       @include breakpoint(sm) {
-        padding-right: var(--component-padding);
-        padding-left: var(--space-md);
-        position: static;
          grid-auto-flow: column;
-        justify-content: start;
         .btn {
-          padding-left: var(--space-md); padding-right: var(--space-md);
+          width: 80%;
           --bg-button: var(--color-accent);
           &:hover { --bg-button: var(--color-accent-lighter)}
         }
       }
-      @include breakpoint(md) {
-        padding-left: var(--space-xl);
+      @include breakpoint(lg) {
         gap: var(--space-lg);
-        .btn{padding-left: var(--btn-padding-x); padding-right: var(--btn-padding-x);}
+        .btn {width: initial;}
       }
     }
+
   }
 }
 
@@ -197,14 +190,14 @@ body > * {
     }
 
     &__services-details .container {
-      padding-left: calc(MIN(100vw, 90rem)/32 * var(--overlap) - var(--mg-left));
+      padding-left: calc(MIN(100vw, var(--max-width-xl))/32 * var(--overlap) - var(--mg-left));
     }
   }
 }
 
 .slider {
   .slide {
-    max-width: 90rem;
+    max-width: var(--max-width-xl);
     display: grid;
     grid-template-columns: repeat(32, 1fr);
     grid-template-rows: repeat(4, 1fr);
