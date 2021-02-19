@@ -1,5 +1,6 @@
 body > * {
   max-width: var(--max-width-xl);
+  margin: 0 auto;
 }
 
 .header {
@@ -200,18 +201,8 @@ body > * {
   }
 }
 
-.slides {
-  display: grid;
-   grid-auto-flow: column;
-   overflow-x: auto;
-   scroll-snap-type: x mandatory;
-   scroll-behavior: smooth;
-   overflow-y: hidden;
-
-
+.slider {
   .slide {
-    //  scroll-margin-top: 300px;
-    width: 100vw;
     max-width: 90rem;
     display: grid;
     grid-template-columns: repeat(32, 1fr);
@@ -234,6 +225,9 @@ body > * {
       grid-column: 15 / -1;
       grid-row: 3 ;
     }
+    .wave-icon {
+      display: none;
+    }
 
     &__intro {
     padding: var(--space-xl) 0;
@@ -247,7 +241,16 @@ body > * {
     &__image--2 {--bg-image: url(../images/mobile/image-slide-2.jpg);}
     &__image--3 {--bg-image: url(../images/mobile/image-slide-3.jpg);}
 
-    &__nav > :last-child {margin-left: var(--space-sm);}
+    &__nav {
+      > :last-child {margin-left: var(--space-sm);}
+      img {
+        cursor: pointer;
+      }
+      img:hover {
+        filter: brightness(0) saturate(100%) invert(82%) sepia(22%) saturate(5613%) hue-rotate(305deg) brightness(105%) contrast(118%);
+      }
+
+    }
 
     @include breakpoint(sm) {
       &__image {
@@ -271,6 +274,7 @@ body > * {
         grid-row: 1 / 4;
         position: relative;
         .wave-icon {
+          display: block;
           position: absolute;
           content: '';
           width: 62.5px;
@@ -294,6 +298,7 @@ body > * {
 .footer {
   padding: var(--space-xl) 0;
   position: relative;
+  overflow: hidden;
   &__logo {
     display: none;
   }
@@ -309,6 +314,7 @@ body > * {
     .container {
      grid-auto-flow: column;
     justify-content: space-between;
+
     h2 { width: 18ch;}
     }
   }
