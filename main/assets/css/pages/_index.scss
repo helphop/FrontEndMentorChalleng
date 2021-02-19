@@ -11,12 +11,6 @@ body > * {
     padding: var(--space-xl) 0;
   }
 
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   &__nav {
     transform: translateX(200%);
     position: fixed;
