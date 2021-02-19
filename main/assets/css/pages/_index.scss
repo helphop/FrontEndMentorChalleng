@@ -61,12 +61,13 @@ body > * {
       object-fit: cover;
     }
   @include breakpoint(sm) {
-    background: right center/ contain no-repeat  url(../images/tablet/image-hero.jpg);
+    --bg-image: url(../images/tablet/image-hero.jpg);
+    background: right center/ contain no-repeat  var(--bg-image);
     &__img {display: none;}
-    &__content {max-width: 398px;}
+    &__content {max-width: 24.875rem;}
   }
   @include breakpoint(lg) {
-    background: right center/ contain no-repeat url(../images/desktop/image-hero.jpg);
+    --bg-image: url(../images/desktop/image-hero.jpg);
     &__content {max-width: 50%;}
   }
 }
