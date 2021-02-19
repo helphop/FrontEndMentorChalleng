@@ -24,8 +24,6 @@ body > * {
       }
     @include breakpoint(sm) {
       transform: translateX(0%);
-      display: flex;
-      justify-content: flex-start;
       padding-left: var(--space-lg);
       position: static;
       background-color: var(--color-primary);
