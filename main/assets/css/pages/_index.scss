@@ -111,13 +111,13 @@ body > * {
   }
 
   @include breakpoint(sm) {
-    min-height: 85vh;
     display: grid;
     grid-template-columns: repeat(32,1fr);
     grid-template-rows: repeat(22, minmax(60px, 1fr));
 
     &__picture {
-      background: url(../images/tablet/image-strategic.jpg) no-repeat;
+      --bg-image: url(../images/tablet/image-strategic.jpg);
+      background: var(--bg-image) no-repeat;
       background-size: cover;
       grid-column: 1 / span 15;
       grid-row: 1 / span 11;
@@ -134,7 +134,7 @@ body > * {
 
     .red-wave-icon {
       transform: translateX(-50%);
-      top: 32%;
+      top: 30%;
       left: 0%;
     }
 
@@ -155,14 +155,13 @@ body > * {
    }
 
   @include breakpoint(lg) {
-    min-height: 120vh;
+    min-height: 150vh;
     --picture-span: 16;
     --details-span: 20;
     --overlap: calc(var(--details-span) - var(--picture-span));
 
     &__picture {
-      background: url(../images/desktop/image-strategic.jpg) no-repeat;
-      background-size: cover;
+      --bg-image: url(../images/desktop/image-strategic.jpg);
       grid-column: 1 / span var(--picture-span);
     }
 
@@ -174,7 +173,7 @@ body > * {
 
     &__services-intro {
       grid-column: 1 / span 18;
-      z-index: 10;
+      z-index: var(--zindex-popover);
     }
 
     &__services-details {
@@ -182,6 +181,7 @@ body > * {
     }
 
     &__services-details .container {
+      //calculate padding for extra overlap on larger screens
       padding-left: calc(MIN(100vw, var(--max-width-xl))/32 * var(--overlap) - var(--mg-left));
     }
   }
