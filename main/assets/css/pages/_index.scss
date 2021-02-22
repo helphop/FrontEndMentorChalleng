@@ -73,7 +73,7 @@ body > * {
 
 .strategic {
   --mg-left: 1.25rem;
-
+  position: relative;
   &__img {
     width: 100%;
     object-fit: cover;
@@ -112,23 +112,21 @@ body > * {
 
   @include breakpoint(sm) {
     display: grid;
-    grid-template-columns: repeat(32,1fr);
-    grid-template-rows: repeat(22, minmax(60px, 1fr));
+    grid-template-columns: 49% 1fr;
+    grid-template-rows: 60vw;
+
 
     &__picture {
       --bg-image: url(../images/tablet/image-strategic.jpg);
       background: var(--bg-image) no-repeat;
       background-size: cover;
-      grid-column: 1 / span 15;
-      grid-row: 1 / span 11;
       img { display: none;}
     }
 
     &__design {
-      grid-column: 16 / -1;
-      grid-row: 1 / span 9;
       display: grid;
       place-items: center;
+      margin-bottom: 20%;
       h2 { max-width: 9ch;}
     }
 
@@ -141,47 +139,44 @@ body > * {
     &__services-intro {
       background: transparent;
       color: var(--color-accent);
-      grid-column: 1 / span 15;
-      grid-row: 13 / span 8;
-  }
+   }
 
     &__services-details {
       padding-bottom: 0;
-      grid-column: 15 / -1;
-      grid-row: 10 / -1;
+      z-index: var(--zindex-header);
+      width: 110%;
+      margin: -20% 0 0 -10%;
       display: grid;
       align-items: center;
+      padding: var(--space-xxxl) 0 ;
     }
    }
 
   @include breakpoint(lg) {
-    min-height: 100vh;
-    --picture-span: 16;
-    --details-span: 20;
-    --details-start-column: 13;
-    --overlap: calc(var(--details-span) - var(--picture-span));
+    grid-template-rows: 984px;
 
     &__picture {
       --bg-image: url(../images/desktop/image-strategic.jpg);
-      grid-column: 1 / span var(--picture-span);
     }
 
     .red-wave-icon {width: 8.43rem;}
 
     &__design {
-       grid-column: 17 / -1;
+      margin-bottom: 20%;
     }
 
     &__services-intro {
-      grid-column: 1 / span 18;
-      z-index: var(--zindex-popover);
+      z-index: var(--zindex-overlay);
+      margin-right: -30%;
     }
 
-    &__services-details { grid-column: 13 / -1;}
+    &__services-details {
+      width: 125%;
+      margin: -20% 0 0 -25%;
+    }
 
     &__services-details .container {
-      //calculate padding for extra overlap on larger screens
-      padding-left: calc(MIN(100vw, var(--max-width-xl))/32 * var(--overlap) - var(--mg-left));
+      padding-left: calc(20% - var(--mg-left));
     }
   }
 }
