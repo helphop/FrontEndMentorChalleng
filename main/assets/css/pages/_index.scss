@@ -157,6 +157,7 @@ body > * {
 
   @include breakpoint(lg) {
     grid-template-rows: 984px;
+
     &__picture {
       --bg-image: url(../images/desktop/image-strategic.jpg);
     }
