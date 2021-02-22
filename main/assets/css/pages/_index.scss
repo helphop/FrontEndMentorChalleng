@@ -63,11 +63,10 @@ body > * {
     --bg-image: url(../images/tablet/image-hero.jpg);
     background: right center/ contain no-repeat  var(--bg-image);
     &__img {display: none;}
-    &__content {max-width: 24.875rem;}
+    &__content {max-width: 55%;}
   }
   @include breakpoint(lg) {
     --bg-image: url(../images/desktop/image-hero.jpg);
-    &__content {max-width: 50%;}
   }
 }
 
@@ -89,7 +88,7 @@ body > * {
 }
 
 &__design h2 {
-  position: relative; //for wave icon
+  position: relative;
    &:before {
     position: absolute;
      content: '';
