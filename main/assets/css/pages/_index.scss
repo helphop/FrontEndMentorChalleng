@@ -230,24 +230,24 @@ body > * {
     }
 
     @include breakpoint(sm) {
-      min-height: 29.5rem;
+      grid-template-columns: 51% 1fr;
+      grid-template-rows: 61vw;
+      --overlap: 10%;
+
       &__image {
-        grid-column: 15 / -1;
-        grid-row: 1 / -1;
+        grid-column: 2 / -1;
+        --overlap-x: calc(1.5 * var(--overlap));
+        width: calc(100% + var(--overlap-x));
+        margin-left: calc(-1 * var(--overlap));
       }
 
-      &__image--1 {--bg-image: url(../images/tablet/image-slide-1.jpg);}
-      &__image--2 {--bg-image: url(../images/tablet/image-slide-2.jpg);}
-      &__image--3 {--bg-image: url(../images/tablet/image-slide-3.jpg);}
-
-      &__info {
-        padding: var(--space-xl) 0
-      }
+      &__info {padding: var(--space-xl) 0}
 
       &__intro {
-        padding: var(--space-xxl) 0;
-        grid-column: 1 / 17;
-        grid-row: 1 / 4;
+        padding: 12vw 0;
+        grid-column: 1 / 2;
+        grid-row: 1;
+        align-self: start;
         position: relative;
         .wave-icon {
           display: block;
@@ -259,12 +259,23 @@ body > * {
           transform: translate(50%, 50%);
         }
       }
+
+      &__image--1 {--bg-image: url(../images/tablet/image-slide-1.jpg);}
+      &__image--2 {--bg-image: url(../images/tablet/image-slide-2.jpg);}
+      &__image--3 {--bg-image: url(../images/tablet/image-slide-3.jpg);}
+
     }
 
     @include breakpoint(lg) {
-      min-height: 45.5rem;
-      &__intro .wave-icon { width: auto;}
-      &__image { grid-column: 13 / -1}
+      grid-template-rows: 50vw;
+
+      &__intro .wave-icon  {width: auto;}
+
+      &__image {
+        grid-column: 2 / -1;
+       width: calc(100% + 3 * var(--overlap));
+       margin-left: calc(-3 * var(--overlap));
+      }
       &__image--1 {--bg-image: url(../images/desktop/image-slide-1.jpg);}
       &__image--2 {--bg-image: url(../images/desktop/image-slide-2.jpg); }
       &__image--3 {--bg-image: url(../images/desktop/image-slide-3.jpg);}
