@@ -113,8 +113,9 @@ body > * {
   @include breakpoint(sm) {
     display: grid;
     grid-template-columns: 49% 1fr;
-    grid-template-rows: 60vw;
-
+    grid-template-rows: 85vw;
+    --overlap: 10%;
+    --overlap-y: calc(3 * var(--overlap));
 
     &__picture {
       --bg-image: url(../images/tablet/image-strategic.jpg);
@@ -126,7 +127,7 @@ body > * {
     &__design {
       display: grid;
       place-items: center;
-      margin-bottom: 20%;
+      margin-bottom: var(--overlap-y);
       h2 { max-width: 9ch;}
     }
 
@@ -139,22 +140,22 @@ body > * {
     &__services-intro {
       background: transparent;
       color: var(--color-accent);
+      h2 { max-width: 15ch;}
    }
 
     &__services-details {
       padding-bottom: 0;
       z-index: var(--zindex-header);
-      width: 110%;
-      margin: -20% 0 0 -10%;
+      width: calc(100% + var(--overlap));
+      margin: calc(-1 * var(--overlap-y)) 0 0 calc(-1 * var(--overlap));
       display: grid;
       align-items: center;
-      padding: var(--space-xxxl) 0 ;
+      padding: var(--space-xxxl) 0;
     }
    }
 
   @include breakpoint(lg) {
     grid-template-rows: 984px;
-
     &__picture {
       --bg-image: url(../images/desktop/image-strategic.jpg);
     }
@@ -162,17 +163,19 @@ body > * {
     .red-wave-icon {width: 8.43rem;}
 
     &__design {
-      margin-bottom: 20%;
+      margin-bottom: calc(2 * var(--overlap));
     }
 
     &__services-intro {
       z-index: var(--zindex-overlay);
-      margin-right: -30%;
+      margin-right: calc(-3 * var(--overlap));
     }
 
     &__services-details {
-      width: 125%;
-      margin: -20% 0 0 -25%;
+      --overlap-x: calc(2.5 * var(--overlap));
+      width: calc(100% + var(--overlap-x));
+      margin: calc(-2 * var(--overlap)) 0 0 calc(-1 * var(--overlap-x));
+      padding: var(--space-xxxxl) 0;
     }
 
     &__services-details .container {
