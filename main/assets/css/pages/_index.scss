@@ -147,7 +147,8 @@ body > * {
       padding-bottom: 0;
       z-index: var(--zindex-header);
       width: calc(100% + var(--overlap));
-      margin: calc(-1 * var(--overlap-y)) 0 0 calc(-1 * var(--overlap));
+      margin-top: calc(-1 * var(--overlap-y));
+      margin-left: calc(-1 * var(--overlap));
       display: grid;
       align-items: center;
       padding: var(--space-xxxl) 0;
@@ -162,19 +163,15 @@ body > * {
 
     .red-wave-icon {width: 8.43rem;}
 
-    &__design {
-      margin-bottom: calc(2 * var(--overlap));
-    }
-
     &__services-intro {
       z-index: var(--zindex-overlay);
-      margin-right: calc(-3 * var(--overlap));
+      margin-right: calc(-1 * var(--overlap));
     }
 
     &__services-details {
       --overlap-x: calc(2.5 * var(--overlap));
       width: calc(100% + var(--overlap-x));
-      margin: calc(-2 * var(--overlap)) 0 0 calc(-1 * var(--overlap-x));
+      margin-left: calc(-1 * var(--overlap-x));
       padding: var(--space-xxxxl) 0;
     }
 
