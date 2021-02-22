@@ -84,18 +84,21 @@ body > * {
   }
 
 &__design {
-  position: relative; //to place wave icon
   display: grid;
   align-content: center;
 }
 
-.red-wave-icon {
-  content: '';
-  position: absolute;
-  transform: translateY(-50%);
-  top: 0;
-  left: var(--component-padding);
-  width: 3.93rem;
+&__design h2 {
+  position: relative; //for wave icon
+   &:before {
+    position: absolute;
+     content: '';
+    background: url(../images/desktop/bg-pattern-wave-red.svg) no-repeat;
+    background-size: contain;
+    width: 4rem;
+    height:4rem;
+    transform: translateY(-150%);
+   }
 }
 
   .service {
@@ -129,13 +132,12 @@ body > * {
       display: grid;
       place-items: center;
       margin-bottom: var(--overlap-y);
-      h2 { max-width: 9ch;}
-    }
-
-    .red-wave-icon {
-      transform: translateX(-50%);
-      top: 35%;
-      left: 0%;
+      h2 {
+        max-width: 9ch;
+        &:before {
+        transform: translate(-130%, 50%);
+        }
+      }
     }
 
     &__services-intro {
@@ -163,7 +165,10 @@ body > * {
       --bg-image: url(../images/desktop/image-strategic.jpg);
     }
 
-    .red-wave-icon {width: 8.43rem;}
+    &__design h2:before {
+      width: 8.43rem;
+      transform: translate(-160%, 50%);
+    }
 
     &__services-intro {
       z-index: var(--zindex-overlay);
