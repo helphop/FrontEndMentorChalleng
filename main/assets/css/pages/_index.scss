@@ -176,7 +176,7 @@ body > * {
     }
 
     &__services-details .container {
-      padding-left: calc(20% - var(--mg-left));
+      padding-left: calc(2 * var(--overlap) - var(--mg-left));
     }
   }
 }
