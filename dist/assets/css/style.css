@@ -692,7 +692,6 @@ body > * {
   .strategic__services-intro {
     background: transparent;
     color: var(--color-accent);
-    padding: var(--space-xxxxl) 0;
   }
   .strategic__services-intro h2 {
     max-width: 15ch;
