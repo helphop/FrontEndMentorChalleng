@@ -671,7 +671,7 @@ body > * {
     display: grid;
     grid-template-columns: 49% 1fr;
     grid-template-rows: 85vw;
-    --overlap: 8%;
+    --overlap: 10%;
     --overlap-y: calc(3 * var(--overlap));
   }
   .strategic__picture {
@@ -692,6 +692,7 @@ body > * {
   .strategic__services-intro {
     background: transparent;
     color: var(--color-accent);
+    padding: var(--space-xxxxl) 0;
   }
   .strategic__services-intro h2 {
     max-width: 15ch;
@@ -801,7 +802,7 @@ body > * {
   .slider .slide {
     grid-template-columns: 51% 1fr;
     grid-template-rows: 61vw;
-    --overlap: 8%;
+    --overlap: 10%;
   }
   .slider .slide__image {
     grid-column: 2 / -1;

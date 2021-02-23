@@ -120,7 +120,7 @@ body > * {
     display: grid;
     grid-template-columns: 49% 1fr;
     grid-template-rows: 85vw;
-    --overlap: 8%;
+    --overlap: 10%;
     --overlap-y: calc(3 * var(--overlap));
 
     &__picture {
@@ -142,6 +142,7 @@ body > * {
     &__services-intro {
       background: transparent;
       color: var(--color-accent);
+      padding: var(--space-xxxl) 0;
       h2 { max-width: 15ch;}
    }
 
@@ -234,7 +235,7 @@ body > * {
     @include breakpoint(sm) {
       grid-template-columns: 51% 1fr;
       grid-template-rows: 61vw;
-      --overlap: 8%;
+      --overlap: 10%;
 
       &__image {
         grid-column: 2 / -1;
