@@ -10033,7 +10033,7 @@ body > * {
     display: grid;
     grid-template-columns: 49% 1fr;
     grid-template-rows: 85vw;
-    --overlap: 10%;
+    --overlap: 8%;
     --overlap-y: calc(3 * var(--overlap));
   }
   .strategic__picture {
@@ -10163,7 +10163,7 @@ body > * {
   .slider .slide {
     grid-template-columns: 51% 1fr;
     grid-template-rows: 61vw;
-    --overlap: 10%;
+    --overlap: 8%;
   }
   .slider .slide__image {
     grid-column: 2 / -1;
@@ -10227,7 +10227,7 @@ body > * {
 }
 
 .footer {
-  padding: var(--space-xl) 0;
+  padding: var(--space-xxl) 0;
   position: relative;
   overflow: hidden;
 }
